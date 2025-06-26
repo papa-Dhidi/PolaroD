@@ -1,0 +1,57 @@
+
+  video {
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+ 
+  button, select {
+    padding: 10px 20px;
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+  }
+
+
+  .frame-content {display: flex; align-items: center; justify-content: center; }
+
+  .frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 37vh;
+    max-width: 57vh;
+  }
+
+  .frame span {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .frame span:nth-child(2) {width: 30px;height: 1.5px; }
+  .frame span:nth-child(3) {width: 1.5px;height: 30px; }
+
+.fullscreen_svg {
+  width: 5vh;
+  position: absolute;
+  right:15px;
+  bottom: 65px;
+}.fullscreen_svg input {width: 100%;opacity: 0;}
+.fullscreen_tap{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  transition: 0.7s;
+  border-radius: 3px;
+  
+}.fullscreen_tap:hover {
+  transform: scale(0.9);
+}

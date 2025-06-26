@@ -1,0 +1,289 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(194, 194, 194);
+}
+body {
+  background-color: #131313;
+  display: block;
+}
+
+  #frameSelect {
+    background-color: #212121;
+    color: #ffffff;
+    border: 1px solid #444;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 200px;
+    margin: 20px auto;
+    display: block;
+    appearance: none; /* Untuk hilangkan panah default di beberapa browser */
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #frameSelect:hover {
+    border-color: #666;
+  }
+  
+  #frameSelect:focus {
+    border-color: #1c1c1c;
+    box-shadow: 0 0 5px #262626;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1d1d;
+    box-shadow: 0 0 5px #141414;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  .navbar .logo img{
+    width: 90px;
+  }
+
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    z-index: 1;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: rgb(211, 211, 211);
+    transition: 0.3s;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 382;
+    font-style: normal;
+    font-size: 2.5vh;
+  }
+
+  .navbar ul li a:hover {
+    color: #ffffff;
+    text-shadow:0px 1px 4px #5c8181;
+  }
+
+  #humburger {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 70%;
+  }
+  
+  #humburger:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  #humburger:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  #humburger:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  #humburger:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  #humburger:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+
+.selection-block {
+  display: block;
+}
+
+
+.side-frame {
+  position: fixed;
+  top: 11vh;
+  left: 0;
+  width: 200px;
+  height: 80vh;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  border-radius: 11px;
+}
+
+.side-frame select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.side-frame img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+.frame-toggle {
+  display: none;
+  position: relative;
+  margin-top: 10px;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.frame-toggle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.frame-toggle span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.frame-toggle svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #ffffff;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.frame-toggle:hover:before {
+  width: 100%;
+  background: #1d1d1d;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.frame-toggle:hover svg {
+  transform: translateX(0);
+}
+
+.frame-toggle:active {
+  transform: scale(0.95);
+}
+
+.close-frameBox{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}.close-frameBox input{position: absolute; display: none;}.frameSelect-close{display: none;}
+
+/* Konten utama */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+
+
+
+  @media (max-width: 768px) {
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #444;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    .navbar ul.active {
+      display: flex;
+    }
+
+    .toggle {
+      display: flex;
+    }
+
+    .side-frame {
+      display: none;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: auto;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-content {
+      margin-left: 0;
+    }
+
+    .frame-toggle {
+      display: block;
+    }
+
+    .side-frame.active {
+      display: flex;
+    }
+    .frameSelect-close{display: block;}
+  
+  }
+  
